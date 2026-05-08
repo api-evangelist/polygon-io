@@ -2,22 +2,170 @@ aid: polygon-io
 url: https://raw.githubusercontent.com/api-evangelist/polygon-io/refs/heads/main/apis.yml
 name: Polygon.io
 x-type: company
-description: >-
-  Polygon.io provides real-time and historical market data APIs for stocks, options, futures, crypto, FX, and indices via REST and WebSocket.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Fintech
   - Market Data
   - Stocks
+  - Options
+  - Forex
   - Crypto
+  - Indices
+  - Futures
   - WebSockets
+  - Real-time
+  - Historical
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+description: >-
+  Polygon.io (rebranded as Massive in early 2026) provides real-time and
+  historical market data APIs across stocks, options, indices, forex, crypto,
+  and futures via REST, WebSocket streaming, and S3-style flat files. APIs
+  cover trades, quotes, aggregates, snapshots, ticker reference data, and
+  corporate actions.
+apis:
+  - aid: polygon-io:stocks-api
+    name: Polygon.io Stocks API
+    tags:
+      - Stocks
+      - Equities
+      - Market Data
+      - Real-time
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api.polygon.io
+    humanURL: https://polygon.io/docs/stocks
+    description: >-
+      Real-time and historical US equity market data including aggregates
+      (minute/hour/day bars), trades, NBBO quotes, snapshots, ticker reference,
+      splits, dividends, and financials. Available via REST and WebSocket.
+    properties:
+      - type: Documentation
+        url: https://polygon.io/docs/stocks
+    x-features:
+      - Real-time and historical aggregates
+      - NBBO trades and quotes
+      - Snapshots and ticker reference
+      - Corporate actions
+      - WebSocket streaming
+    x-use-cases:
+      - Power equity charts and tickers
+      - Backtest strategies on historical bars
+      - Stream live trades into surveillance systems
+  - aid: polygon-io:options-api
+    name: Polygon.io Options API
+    tags:
+      - Options
+      - OPRA
+      - Market Data
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api.polygon.io
+    humanURL: https://polygon.io/docs/options
+    description: >-
+      OPRA-licensed options market data via REST and WebSocket: aggregates,
+      trades, quotes, snapshots, contract reference, and option chains.
+    properties:
+      - type: Documentation
+        url: https://polygon.io/docs/options
+    x-features:
+      - OPRA-licensed options data
+      - Snapshot and chain endpoints
+      - Greeks and IV (paid tiers)
+      - WebSocket streaming
+    x-use-cases:
+      - Options trading research
+      - Volatility surface modeling
+      - Greeks dashboards
+  - aid: polygon-io:indices-api
+    name: Polygon.io Indices API
+    tags:
+      - Indices
+      - Market Data
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api.polygon.io
+    humanURL: https://polygon.io/docs/indices
+    description: Real-time and historical index values for major US and global indices via REST and WebSocket.
+    properties:
+      - type: Documentation
+        url: https://polygon.io/docs/indices
+    x-features:
+      - Index values and aggregates
+      - Snapshots
+      - WebSocket streaming
+    x-use-cases:
+      - Benchmark performance tracking
+      - Index-based product pricing
+  - aid: polygon-io:forex-api
+    name: Polygon.io Forex API
+    tags:
+      - Forex
+      - FX
+      - Currencies
+      - Market Data
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api.polygon.io
+    humanURL: https://polygon.io/docs/forex
+    description: Real-time and historical FX prices for 1,000+ currency pairs via REST and WebSocket.
+    properties:
+      - type: Documentation
+        url: https://polygon.io/docs/forex
+    x-features:
+      - 1,000+ currency pairs
+      - Aggregates and quotes
+      - WebSocket streaming
+    x-use-cases:
+      - Multi-currency reporting
+      - FX trading strategies
+  - aid: polygon-io:crypto-api
+    name: Polygon.io Crypto API
+    tags:
+      - Crypto
+      - Cryptocurrency
+      - Market Data
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api.polygon.io
+    humanURL: https://polygon.io/docs/crypto
+    description: Aggregates, trades, snapshots, level-2 books, and L2 streaming for crypto pairs across major exchanges.
+    properties:
+      - type: Documentation
+        url: https://polygon.io/docs/crypto
+    x-features:
+      - Aggregated cross-exchange data
+      - Level-2 order books
+      - WebSocket streaming
+    x-use-cases:
+      - Crypto trading and analytics
+      - Cross-exchange arbitrage research
+  - aid: polygon-io:futures-api
+    name: Polygon.io Futures API
+    tags:
+      - Futures
+      - Market Data
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api.polygon.io
+    humanURL: https://polygon.io/docs/futures
+    description: Real-time and historical futures market data including aggregates, trades, quotes, and snapshots.
+    properties:
+      - type: Documentation
+        url: https://polygon.io/docs/futures
+    x-features:
+      - CME-licensed futures data
+      - Aggregates and snapshots
+      - Continuous contracts
+    x-use-cases:
+      - Futures trading research
+      - Commodities and rates analytics
 common:
-  - type: Website
+  - type: Portal
     url: https://polygon.io/
+  - type: Documentation
+    url: https://polygon.io/docs
+  - type: Pricing
+    url: https://polygon.io/pricing
+  - type: Status
+    url: https://status.polygon.io/
+  - type: GitHub
+    url: https://github.com/polygon-io
   - type: Plans
     url: plans/polygon-io-plans-pricing.yml
   - type: RateLimits

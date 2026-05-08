@@ -5,62 +5,71 @@ provider: Polygon.io
 providerId: polygon-io
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
-- Fintech
-- Market Data
-- Stocks
-- Crypto
-- WebSockets
-- FinOps
-- Cost Management
-- FOCUS
-description: FOCUS-aligned FinOps placeholder for Polygon.io. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+  - Fintech
+  - Market Data
+  - FinOps
+  - FOCUS
+description: >-
+  FinOps view of Polygon.io. Subscription-based per asset class with multiple tiers; Business
+  contracts add redistribution and OPRA/CME exchange fees passed through. Customers should
+  budget per-asset-class subscriptions plus exchange data fees on Business plans.
 sources:
-- https://polygon.io/
-- https://focus.finops.org/focus-specification/v1-3/
+  - https://polygon.io/pricing
+  - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
   dataSpec: FOCUS
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
-publisherName: Polygon.io
+publisherName: Polygon.io / Massive
 serviceCategory: Fintech
 billingModel:
-  pricingCategory: To Be Reconciled
+  pricingCategory: Subscription
   billingFrequency: Monthly
   billingCurrency: USD
   chargeCategories:
-  - Usage
-  - Purchase
-  - Adjustment
+    - Subscription
+    - Usage
+    - Adjustment
 focusColumns:
-  ServiceName: Polygon.io
+  ServiceName: Polygon.io Market Data API
   ServiceCategory: Fintech
   ProviderName: Polygon.io
   PublisherName: Polygon.io
   InvoiceIssuerName: Polygon.io
   BillingCurrency: USD
-  ChargeCategory: Usage
+  ChargeCategory: Subscription
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
-  aggregation: sum
-  dimensions:
-  - account
-  - resource
+  - name: stocks_subscription
+    description: Stocks plan monthly subscription.
+    unit: month
+    aggregation: sum
+    dimensions:
+      - api_key
+  - name: options_subscription
+    description: Options plan monthly subscription (includes OPRA exchange fee on Business).
+    unit: month
+    aggregation: sum
+    dimensions:
+      - api_key
+  - name: futures_subscription
+    description: Futures plan monthly subscription (CME exchange fees on Business).
+    unit: month
+    aggregation: sum
+    dimensions:
+      - api_key
 principles:
-- name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
-- name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
-- name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
-- name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  - name: Visibility
+    description: Tag each Polygon API key to a single owning workload to enable accurate allocation.
+  - name: Allocation
+    description: Allocate subscription cost across consuming products; redistribution requires Business plan.
+  - name: Optimization
+    description: Right-size between Starter / Developer / Advanced based on actual rpm and SIP requirements.
+  - name: Accountability
+    description: Assign a billing owner per asset-class subscription; review at renewal.
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com

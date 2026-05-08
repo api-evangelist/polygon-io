@@ -5,31 +5,50 @@ provider: Polygon.io
 providerId: polygon-io
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
-- Fintech
-- Market Data
-- Stocks
-- Crypto
-- WebSockets
-- Rate Limiting
-- Quotas
-- Throttling
-description: Placeholder rate-limit artifact for Polygon.io. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+  - Fintech
+  - Market Data
+  - Stocks
+  - Options
+  - Crypto
+  - Rate Limiting
+description: >-
+  The Polygon.io Basic (Free) plan is hard-capped at 5 API requests per minute. Paid Stocks,
+  Options, Indices, Forex, Crypto, and Futures plans (Starter, Developer, Advanced) advertise
+  unlimited API requests. WebSocket cluster connections are also tier-gated. Throttled responses
+  return HTTP 429 with a Retry-After header.
 sources:
-- https://polygon.io/
+  - https://polygon.io/docs/getting-started
+  - https://polygon.io/pricing
 responseCodes:
   throttled: 429
 limits:
-- name: Default
-  scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+  - name: Basic (Free) plan
+    scope: api_key
+    metric: requests_per_minute
+    limit: 5
+    notes: Hard cap on Free tier across REST.
+  - name: Paid Stocks/Options/Forex/Crypto plans
+    scope: api_key
+    metric: requests_per_minute
+    limit: -1
+    notes: Advertised as unlimited; soft fair-use applies.
+  - name: WebSocket connections (Starter)
+    scope: api_key
+    metric: concurrent_connections
+    limit: 1
+    notes: Free/Starter limited to a single WebSocket cluster connection.
+  - name: WebSocket connections (Advanced)
+    scope: api_key
+    metric: concurrent_connections
+    limit: -1
+    notes: Higher tiers permit multiple cluster connections.
 policies:
-- name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  - name: Backoff Strategy
+    description: On 429, honor Retry-After and apply exponential backoff with jitter.
+  - name: Connection Reuse
+    description: Reuse WebSocket connections; do not open per-message connections.
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com

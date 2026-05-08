@@ -7,35 +7,135 @@ created: '2026-05-08'
 modified: '2026-05-08'
 reconciled: false
 tags:
-- Fintech
-- Market Data
-- Stocks
-- Crypto
-- WebSockets
-- Plans
-description: Placeholder plans/pricing artifact for Polygon.io. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled.
+  - Fintech
+  - Market Data
+  - Stocks
+  - Options
+  - Crypto
+  - Plans
+description: >-
+  Polygon.io publishes per-asset-class plan tiers (Basic free, Starter, Developer, Advanced,
+  Business). Each asset class (Stocks, Options, Indices, Forex, Crypto, Futures) has its own
+  pricing ladder with rate-limit and feature differences. Pricing was undergoing transition during
+  the Polygon-to-Massive rebrand; values here reflect the long-published 2024-2025 schedule and
+  should be re-checked against polygon.io/pricing.
+notes: Pricing page redirects to massive.com/pricing during rebrand; numbers above are the
+  long-standing published tiers and should be re-verified at next refresh.
 sources:
-- https://polygon.io/
+  - https://polygon.io/pricing
+  - https://massive.com/pricing
 plans:
-- id: polygon-io-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
-  entries:
-  - label: API Access
-    name: api_access
-    type: flat
-    metric: varies
-    limit: -1
-    timeFrame: usage
-    geo: global
-    unit: 1
-    price: see https://polygon.io/
-    userMultiplied: false
-  elements:
-  - name: Pending Reconciliation
+  - id: polygon-io-basic
+    name: Basic (Free)
+    type: freemium
+    description: Free tier for evaluation, 5 API calls per minute, end-of-day data only.
+    entries:
+      - label: Monthly subscription
+        name: basic_monthly
+        type: subscription
+        metric: month
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Rate limit
+        name: basic_rate
+        type: quota
+        metric: requests_per_minute
+        limit: 5
+        timeFrame: minute
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: End-of-day data only
+      - name: 2 years history
+  - id: polygon-io-stocks-starter
+    name: Stocks Starter
+    type: subscription
+    description: Stocks plan with 15-minute delayed data and unlimited API calls; ~$29/month.
+    entries:
+      - label: Monthly subscription
+        name: stocks_starter_monthly
+        type: subscription
+        metric: month
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '29.00'
+        userMultiplied: false
+      - label: Rate limit
+        name: stocks_starter_rate
+        type: quota
+        metric: requests_per_minute
+        limit: -1
+        timeFrame: minute
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: 15-minute delayed
+      - name: 5 years history
+  - id: polygon-io-stocks-developer
+    name: Stocks Developer
+    type: subscription
+    description: Real-time IEX feed, unlimited API calls; ~$79/month.
+    entries:
+      - label: Monthly subscription
+        name: stocks_developer_monthly
+        type: subscription
+        metric: month
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '79.00'
+        userMultiplied: false
+    elements:
+      - name: IEX real-time
+      - name: 10 years history
+  - id: polygon-io-stocks-advanced
+    name: Stocks Advanced
+    type: subscription
+    description: Full SIP real-time, WebSocket; ~$199/month.
+    entries:
+      - label: Monthly subscription
+        name: stocks_advanced_monthly
+        type: subscription
+        metric: month
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '199.00'
+        userMultiplied: false
+    elements:
+      - name: Full-market SIP real-time
+      - name: WebSocket streams
+      - name: 20 years history
+  - id: polygon-io-business
+    name: Business
+    type: enterprise
+    description: Custom pricing for redistribution, OPRA business use, multi-asset bundles.
+    entries:
+      - label: Custom pricing
+        name: business_custom
+        type: subscription
+        metric: contract
+        limit: -1
+        timeFrame: contract
+        geo: global
+        unit: 1
+        price: contact sales
+        userMultiplied: false
+    elements:
+      - name: Redistribution rights
+      - name: Multi-asset bundles
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
