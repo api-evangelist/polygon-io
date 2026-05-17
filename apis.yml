@@ -1,7 +1,7 @@
 aid: polygon-io
 url: https://raw.githubusercontent.com/api-evangelist/polygon-io/refs/heads/main/apis.yml
 name: Polygon.io
-x-type: company
+kind: company
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Fintech
@@ -162,7 +162,7 @@ common:
     url: https://polygon.io/docs
   - type: Pricing
     url: https://polygon.io/pricing
-  - type: Status
+  - type: StatusPage
     url: https://status.polygon.io/
   - type: GitHub
     url: https://github.com/polygon-io
