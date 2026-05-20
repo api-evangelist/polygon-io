@@ -156,6 +156,8 @@ apis:
       - Futures trading research
       - Commodities and rates analytics
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/polygon-io
   - type: Portal
     url: https://polygon.io/
   - type: Documentation
