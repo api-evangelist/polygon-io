@@ -16,7 +16,7 @@ tags:
   - Real-time
   - Historical
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-05-29'
 specificationVersion: '0.19'
 description: >-
   Polygon.io (rebranded as Massive in early 2026) provides real-time and
@@ -42,6 +42,8 @@ apis:
     properties:
       - type: Documentation
         url: https://polygon.io/docs/stocks
+      - type: AsyncAPI
+        url: asyncapi/polygon-io-asyncapi.yml
     x-features:
       - Real-time and historical aggregates
       - NBBO trades and quotes
@@ -67,6 +69,8 @@ apis:
     properties:
       - type: Documentation
         url: https://polygon.io/docs/options
+      - type: AsyncAPI
+        url: asyncapi/polygon-io-asyncapi.yml
     x-features:
       - OPRA-licensed options data
       - Snapshot and chain endpoints
@@ -88,6 +92,8 @@ apis:
     properties:
       - type: Documentation
         url: https://polygon.io/docs/indices
+      - type: AsyncAPI
+        url: asyncapi/polygon-io-asyncapi.yml
     x-features:
       - Index values and aggregates
       - Snapshots
@@ -109,6 +115,8 @@ apis:
     properties:
       - type: Documentation
         url: https://polygon.io/docs/forex
+      - type: AsyncAPI
+        url: asyncapi/polygon-io-asyncapi.yml
     x-features:
       - 1,000+ currency pairs
       - Aggregates and quotes
@@ -129,6 +137,8 @@ apis:
     properties:
       - type: Documentation
         url: https://polygon.io/docs/crypto
+      - type: AsyncAPI
+        url: asyncapi/polygon-io-asyncapi.yml
     x-features:
       - Aggregated cross-exchange data
       - Level-2 order books
@@ -148,6 +158,8 @@ apis:
     properties:
       - type: Documentation
         url: https://polygon.io/docs/futures
+      - type: AsyncAPI
+        url: asyncapi/polygon-io-asyncapi.yml
     x-features:
       - CME-licensed futures data
       - Aggregates and snapshots
