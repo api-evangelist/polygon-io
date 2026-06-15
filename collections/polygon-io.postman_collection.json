@@ -1,0 +1,521 @@
+{
+  "item": [
+    {
+      "id": "dd053e12-fadb-4402-a95c-8fc4859f345f",
+      "name": "Aggregates",
+      "description": {
+        "content": "Aggregate (OHLC) bar data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0ebd2731-4d3b-47ad-87e1-a8037d003637",
+          "name": "Get aggregate (OHLC) bars for a ticker",
+          "request": {
+            "name": "Get aggregate (OHLC) bars for a ticker",
+            "description": {
+              "content": "Returns aggregate bars for a stock over a given date range in\ncustom time window sizes (e.g., 5-minute bars between two dates).\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "aggs",
+                "ticker",
+                ":stocksTicker",
+                "range",
+                ":multiplier",
+                ":timespan",
+                ":from",
+                ":to"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "adjusted",
+                  "value": "true",
+                  "description": "Whether the results are adjusted for splits."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "5000"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "stocksTicker",
+                  "description": "(Required) Case-sensitive stock ticker symbol (e.g., AAPL)."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "multiplier",
+                  "description": "(Required) Size of the timespan multiplier."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "timespan",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "from",
+                  "description": "(Required) Start of the aggregate window (YYYY-MM-DD or millisecond timestamp)."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "to",
+                  "description": "(Required) End of the aggregate window (YYYY-MM-DD or millisecond timestamp)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b31098a6-d826-43c0-bc03-fe6bd40e88ad",
+              "name": "Aggregate bars response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "aggs",
+                    "ticker",
+                    ":stocksTicker",
+                    "range",
+                    ":multiplier",
+                    ":timespan",
+                    ":from",
+                    ":to"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "adjusted",
+                      "value": "true"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "5000"
+                    },
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stocksTicker",
+                      "description": "(Required) Case-sensitive stock ticker symbol (e.g., AAPL)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "multiplier",
+                      "description": "(Required) Size of the timespan multiplier."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "timespan",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "from",
+                      "description": "(Required) Start of the aggregate window (YYYY-MM-DD or millisecond timestamp)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "to",
+                      "description": "(Required) End of the aggregate window (YYYY-MM-DD or millisecond timestamp)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ticker\": \"string\",\n  \"adjusted\": false,\n  \"queryCount\": 5695,\n  \"resultsCount\": 3945,\n  \"status\": \"string\",\n  \"request_id\": \"string\",\n  \"count\": 5770,\n  \"next_url\": \"http://MuONiDLBWkBue.ieDyDidKc4+vkslujW7pr6TWBDfrTCY\",\n  \"results\": [\n    {\n      \"T\": \"string\",\n      \"v\": 109.37083601890608,\n      \"vw\": 9923.787765608531,\n      \"o\": 1531.6548425890908,\n      \"c\": 9605.402843899807,\n      \"h\": 226.83225161321818,\n      \"l\": 8196.644163421352,\n      \"t\": 7761,\n      \"n\": 1770\n    },\n    {\n      \"T\": \"string\",\n      \"v\": 42.418470545962926,\n      \"vw\": 7041.96125277182,\n      \"o\": 2651.9471682994545,\n      \"c\": 551.0295198239668,\n      \"h\": 507.6677121555906,\n      \"l\": 2875.1178237290096,\n      \"t\": 8700,\n      \"n\": 3267\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "46f0d5a3-36a6-45de-a0e3-940f5c8010cb",
+      "name": "Reference",
+      "description": {
+        "content": "Ticker reference data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b9bc1c13-5580-4895-92ca-bcd171262a63",
+          "name": "List ticker symbols",
+          "request": {
+            "name": "List ticker symbols",
+            "description": {
+              "content": "Retrieve a comprehensive list of ticker symbols supported across asset classes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "reference",
+                "tickers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ticker",
+                  "value": "<string>",
+                  "description": "Filter by specific ticker symbol."
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "market",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "exchange",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "active",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "674720ec-2f3a-4659-aa2b-dbfb25c169f8",
+              "name": "Tickers response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "reference",
+                    "tickers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "market",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exchange",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "active",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"request_id\": \"string\",\n  \"count\": 6490,\n  \"next_url\": \"https://xKLgqFXiXartjmGCARqOjPXI.atoJYlrTbAE4SjctBkfO,jIAvS7wMAVf4DLk9BrtIzDi8\",\n  \"results\": [\n    {\n      \"ticker\": \"string\",\n      \"name\": \"string\",\n      \"market\": \"string\",\n      \"locale\": \"string\",\n      \"primary_exchange\": \"string\",\n      \"type\": \"string\",\n      \"active\": false,\n      \"currency_name\": \"string\",\n      \"cik\": \"string\",\n      \"composite_figi\": \"string\",\n      \"share_class_figi\": \"string\",\n      \"last_updated_utc\": \"1969-08-26T13:07:45.085Z\"\n    },\n    {\n      \"ticker\": \"string\",\n      \"name\": \"string\",\n      \"market\": \"string\",\n      \"locale\": \"string\",\n      \"primary_exchange\": \"string\",\n      \"type\": \"string\",\n      \"active\": true,\n      \"currency_name\": \"string\",\n      \"cik\": \"string\",\n      \"composite_figi\": \"string\",\n      \"share_class_figi\": \"string\",\n      \"last_updated_utc\": \"2024-05-19T19:12:35.604Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "655ea899-1277-44dd-8e85-21aa625ba250",
+          "name": "Get ticker details",
+          "request": {
+            "name": "Get ticker details",
+            "description": {
+              "content": "Retrieve detailed reference information for a single ticker symbol.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "reference",
+                "tickers",
+                ":ticker"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<date>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ticker",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b1db9a74-54a4-4213-975e-e0a5b830b96b",
+              "name": "Ticker details response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "reference",
+                    "tickers",
+                    ":ticker"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ticker",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"request_id\": \"string\",\n  \"results\": {\n    \"ticker\": \"string\",\n    \"name\": \"string\",\n    \"market\": \"string\",\n    \"locale\": \"string\",\n    \"primary_exchange\": \"string\",\n    \"type\": \"string\",\n    \"active\": false,\n    \"currency_name\": \"string\",\n    \"cik\": \"string\",\n    \"composite_figi\": \"string\",\n    \"share_class_figi\": \"string\",\n    \"last_updated_utc\": \"1965-01-25T06:30:26.373Z\",\n    \"description\": \"string\",\n    \"homepage_url\": \"https://moX.kpjjcktN4TNUVfi1sE887sy.fuKVTBwV.a\",\n    \"list_date\": \"1959-02-23\",\n    \"market_cap\": 8941.27139154434,\n    \"phone_number\": \"string\",\n    \"sic_code\": \"string\",\n    \"sic_description\": \"string\",\n    \"total_employees\": 1866,\n    \"weighted_shares_outstanding\": 7256.492581901241,\n    \"address\": {\n      \"key_0\": 5322,\n      \"key_1\": \"string\",\n      \"key_2\": 4193\n    },\n    \"branding\": {\n      \"logo_url\": \"http://KyQBtA.kjemkj0Ezy8\",\n      \"icon_url\": \"https://F.ipsd7BzDLHmkpSSnsteoE8e\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.polygon.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apiKey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "deda507b-2ffb-4608-a70d-ae8a93adb70b",
+    "name": "Polygon.io REST API (Stocks)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Polygon.io (rebranded as Massive in early 2026) exposes real-time\nand historical US equity market data via a REST API at\n`https://api.polygon.io`. This specification captures a\nrepresentative subset of the Stocks API: aggregate bars and ticker\nreference. Authentication uses an API key, sent either as the\n`apiKey` query parameter or as `Authorization: Bearer <apiKey>`.\n\n\nContact Support:\n Name: Polygon.io / Massive Documentation",
+      "type": "text/plain"
+    }
+  }
+}
