@@ -2,7 +2,7 @@ aid: polygon-io
 url: https://raw.githubusercontent.com/api-evangelist/polygon-io/refs/heads/main/apis.yml
 name: Polygon.io
 kind: company
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Fintech
   - Market Data
@@ -32,7 +32,7 @@ apis:
       - Equities
       - Market Data
       - Real-time
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.polygon.io
     humanURL: https://polygon.io/docs/stocks
     description: >-
@@ -60,7 +60,7 @@ apis:
       - Options
       - OPRA
       - Market Data
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.polygon.io
     humanURL: https://polygon.io/docs/options
     description: >-
@@ -85,7 +85,7 @@ apis:
     tags:
       - Indices
       - Market Data
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.polygon.io
     humanURL: https://polygon.io/docs/indices
     description: Real-time and historical index values for major US and global indices via REST and WebSocket.
@@ -108,7 +108,7 @@ apis:
       - FX
       - Currencies
       - Market Data
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.polygon.io
     humanURL: https://polygon.io/docs/forex
     description: Real-time and historical FX prices for 1,000+ currency pairs via REST and WebSocket.
@@ -130,7 +130,7 @@ apis:
       - Crypto
       - Cryptocurrency
       - Market Data
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.polygon.io
     humanURL: https://polygon.io/docs/crypto
     description: Aggregates, trades, snapshots, level-2 books, and L2 streaming for crypto pairs across major exchanges.
@@ -151,7 +151,7 @@ apis:
     tags:
       - Futures
       - Market Data
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.polygon.io
     humanURL: https://polygon.io/docs/futures
     description: Real-time and historical futures market data including aggregates, trades, quotes, and snapshots.
