@@ -168,6 +168,10 @@ apis:
       - Futures trading research
       - Commodities and rates analytics
 common:
+  - type: DomainSecurity
+    url: security/polygon-io-domain-security.yml
+  - type: Authentication
+    url: authentication/polygon-io-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/polygon-io
   - type: Portal
