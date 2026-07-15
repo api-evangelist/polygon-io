@@ -168,6 +168,8 @@ apis:
       - Futures trading research
       - Commodities and rates analytics
 common:
+  - type: AgenticAccess
+    url: agentic-access/polygon-io-agentic-access.yml
   - type: DomainSecurity
     url: security/polygon-io-domain-security.yml
   - type: Authentication
