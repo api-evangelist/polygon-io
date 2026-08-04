@@ -1,0 +1,16 @@
+{
+  "provider": "polygon-io",
+  "sources": [
+    "polygon-io-aggregates-api-openapi.yml",
+    "polygon-io-reference-api-openapi.yml"
+  ],
+  "outputs": [
+    "polygon-io-aggregates-api-openapi.yml",
+    "polygon-io-reference-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
