@@ -1,0 +1,241 @@
+{
+  "item": [
+    {
+      "id": "6e30316d-00cd-4c7a-ad42-b3bd939f6bca",
+      "name": "Aggregates",
+      "description": {
+        "content": "Aggregate (OHLC) bar data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "15837dbd-4757-4f12-add3-babff2f2fa75",
+          "name": "Get aggregate (OHLC) bars for a ticker",
+          "request": {
+            "name": "Get aggregate (OHLC) bars for a ticker",
+            "description": {
+              "content": "Returns aggregate bars for a stock over a given date range in\ncustom time window sizes (e.g., 5-minute bars between two dates).\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "aggs",
+                "ticker",
+                ":stocksTicker",
+                "range",
+                ":multiplier",
+                ":timespan",
+                ":from",
+                ":to"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "adjusted",
+                  "value": "true",
+                  "description": "Whether the results are adjusted for splits."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "5000"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "stocksTicker",
+                  "description": "(Required) Case-sensitive stock ticker symbol (e.g., AAPL)."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "multiplier",
+                  "description": "(Required) Size of the timespan multiplier."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "timespan",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "from",
+                  "description": "(Required) Start of the aggregate window (YYYY-MM-DD or millisecond timestamp)."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "to",
+                  "description": "(Required) End of the aggregate window (YYYY-MM-DD or millisecond timestamp)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f68962f3-e495-409f-9d0d-68ac75f0cd41",
+              "name": "Aggregate bars response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "aggs",
+                    "ticker",
+                    ":stocksTicker",
+                    "range",
+                    ":multiplier",
+                    ":timespan",
+                    ":from",
+                    ":to"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "adjusted",
+                      "value": "true"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "5000"
+                    },
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stocksTicker",
+                      "description": "(Required) Case-sensitive stock ticker symbol (e.g., AAPL)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "multiplier",
+                      "description": "(Required) Size of the timespan multiplier."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "timespan",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "from",
+                      "description": "(Required) Start of the aggregate window (YYYY-MM-DD or millisecond timestamp)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "to",
+                      "description": "(Required) End of the aggregate window (YYYY-MM-DD or millisecond timestamp)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ticker\": \"string\",\n  \"adjusted\": true,\n  \"queryCount\": 5918,\n  \"resultsCount\": 7326,\n  \"status\": \"string\",\n  \"request_id\": \"string\",\n  \"count\": 459,\n  \"next_url\": \"https://AaYquDxzgmCyQbEzbT.fyvYVvwWqpGAlU8sq8JGy8VJWyyOGjZ-HcZIro\",\n  \"results\": [\n    {\n      \"T\": \"string\",\n      \"v\": 6966.38843472008,\n      \"vw\": 5245.123952019233,\n      \"o\": 4560.030274786064,\n      \"c\": 6561.380143746981,\n      \"h\": 3108.195143311615,\n      \"l\": 3854.7204469837525,\n      \"t\": 9756,\n      \"n\": 8335\n    },\n    {\n      \"T\": \"string\",\n      \"v\": 6264.762736878157,\n      \"vw\": 471.44464453218404,\n      \"o\": 4551.83290968115,\n      \"c\": 4462.53756156474,\n      \"h\": 2164.039409762475,\n      \"l\": 749.5184400264699,\n      \"t\": 675,\n      \"n\": 4685\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.polygon.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apiKey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7ff99799-701c-4d2f-83c7-ca369f3ef401",
+    "name": "Polygon.io REST API (Stocks) Aggregates API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Polygon.io (rebranded as Massive in early 2026) exposes real-time\nand historical US equity market data via a REST API at\n`https://api.polygon.io`. This specification captures a\nrepresentative subset of the Stocks API: aggregate bars and ticker\nreference. Authentication uses an API key, sent either as the\n`apiKey` query parameter or as `Authorization: Bearer <apiKey>`.\n\n\nContact Support:\n Name: Polygon.io / Massive Documentation",
+      "type": "text/plain"
+    }
+  }
+}
