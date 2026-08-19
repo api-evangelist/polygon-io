@@ -30,7 +30,7 @@ tags:
   - Historical
 created: '2026-05-08'
 modified: '2026-05-29'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 description: >-
   Polygon.io (rebranded as Massive in early 2026) provides real-time and
   historical market data APIs across stocks, options, indices, forex, crypto,
