@@ -26,6 +26,18 @@ tags:
   - Indices
   - Futures
   - WebSockets
+  - Real-Time
+  - Historical
+tags_raw:
+  - Fintech
+  - Market Data
+  - Stocks
+  - Options
+  - Forex
+  - Crypto
+  - Indices
+  - Futures
+  - WebSockets
   - Real-time
   - Historical
 created: '2026-05-08'
@@ -41,6 +53,11 @@ apis:
 - aid: polygon-io:stocks-api
   name: Polygon.io Stocks API
   tags:
+  - Stocks
+  - Equities
+  - Market Data
+  - Real-Time
+  tags_raw:
   - Stocks
   - Equities
   - Market Data
@@ -118,6 +135,11 @@ apis:
 - aid: polygon-io:forex-api
   name: Polygon.io Forex API
   tags:
+  - Forex
+  - FX
+  - Currency
+  - Market Data
+  tags_raw:
   - Forex
   - FX
   - Currencies
